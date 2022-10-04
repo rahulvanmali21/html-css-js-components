@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Lato;
+}
+
+.box {
+  max-width: 600px;
+}
+
+.accordian {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.accordian-head {
+  border: 1px solid #dee2e6;
+}
+.accordian-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  color: rgb(25, 25, 25);
+  padding: 0.75rem 0.65rem;
+}
+.accordian-button::after {
+  content: "\25bc";
+  transform: rotate(90deg);
+  float: right;
+  color: gray;
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+.accordian-button:is(.collapsed) {
+  color: rgb(60, 88, 246);
+  background-color: rgba(167, 178, 240, 0.325);
+}
+.accordian-button:is(.collapsed):after {
+  transform: rotate(0deg);
+}
+
+.accordian-body {
+  border: 1px solid #dee2e6;
+  border-top: transparent;
+  padding: 0.3rem;
+}
